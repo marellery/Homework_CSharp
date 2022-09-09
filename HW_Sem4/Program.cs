@@ -18,33 +18,25 @@
 
 //  Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
 
-// Console.WriteLine("Введите число:");
-// string num = Convert.ToString(Console.ReadLine());
-// int [] array = {num}
+Console.WriteLine("Введите число:");
+// !!!!!!!!!!!!!!!!!!!!    //string num = Convert.ToString(Console.ReadLine());
 
+// !!!!!!!!!!!!!!!!!!!!!   //int sum = (int) char.GetNumericValue(num[0]);
+// Console.WriteLine(sum);
+int num = Convert.ToInt32 (Console.ReadLine());
+Console.WriteLine(GetSum(num));
 
+int GetSum(int number)
+{
+    int sum=0;
 
-// Console.WriteLine("Сумма = "+GetSum(num));
-
-// int GetSum (int number)
-// {
-//     int count = Convert.ToString(num).Length;
-//     int sum = 0;
-//     int index = 0;
-
-//      while (index>count)
-//      {
-//          sum+=number[index];
-//          index++;
-
-//      }
-//      return sum;
-//  }
-
-
-
-
-
+    while (number>0)
+    {
+        sum+=number%10;
+        number/=10;
+    }
+    return sum;
+}
 
 // Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
 
