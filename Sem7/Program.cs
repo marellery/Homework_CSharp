@@ -15,8 +15,8 @@
 // {
 //     for (int j = 0; j < matrix.GetLength(1); j++)
 //     {
-//         matrix[i,j]=new Random().NextDouble()*5;
-//         Console.Write(matrix[i,j]+"\t");
+//         matrix[i,j]=new Random().NextDouble()*(-10-100);
+//         Console.Write(Math.Round(matrix[i,j], 2)+"\t");
 
         
 //     }
@@ -48,9 +48,9 @@
 
 // int[,] matrix = new int [rows, columns];
 
-// for (int i = 0; i < matrix.GetLength(0); i++)
+// for (int i = 1; i < matrix.GetLength(0); i++)
 // {
-//     for (int j = 0; j < matrix.GetLength(1); j++)
+//     for (int j = 1; j < matrix.GetLength(1); j++)
 //     {
 //         matrix[i,j]=new Random().Next(1,10);
 //         Console.Write(matrix[i,j]+"\t");
@@ -63,29 +63,17 @@
 
 
 
-
-// for (int i = 0; i < matrix.GetLength(0); i++)
-// {
-//     if (rowsearch<i)
-//     {
-//         for (int j = 0; j < matrix.GetLength(1); j++)
-//         {
-//             if (columnsearch<j)
+//  if (rowsearch>rows || columnsearch> columns)
 //             {
-//                 matrix[rowsearch,columnsearch]=matrix[i,j];
-//                 Console.WriteLine(matrix[rowsearch,columnsearch]+"-Искомый элемент");
-                
+//                Console.WriteLine("Элемент не существует");
+                               
 //             }
 //             else
 //             {
-//             Console.WriteLine("Элемент не существует");
-                       
+            
+//                   Console.WriteLine(matrix[rowsearch,columnsearch]+"-Искомый элемент");     
 //             }
-//             break; 
-//         }
-//     }
-// }
-    
+              
             
     
     
@@ -114,26 +102,20 @@ for (int i = 0; i < rows; i++)
     Console.WriteLine();
 }
 Console.WriteLine();
+Console.WriteLine("----------------------------");
 
-for(int m = 0; m < columns; m++)
+
+for (int i = 0; i < columns; i++)
+{
+    double sum=0;
+    for (int j = 0; j < rows; j++)
     {
-        Search (matrix);
-        Console.Write(String.Join(", ", arif/rows));
+        sum+=matrix[i,j];
     }
-   
+    Console.WriteLine($"{Math.Round(sum/columns-1, 2)}");
 
-
-
-void Search (int[,] matrix)
-{
-
- for(int m = 0; m < rows; m++)
-{
-    
-    int n=0;
-    arif=(arif+matrix[m, n]);
-              
 }
-}
+
+
 
 
