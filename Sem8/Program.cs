@@ -1,22 +1,48 @@
 ﻿// Задача 54: Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию элементы каждой строки двумерного массива.
 
 
-//int[,] array = new int[new Random().Next(1, 10), new Random().Next(1, 10)];
 
-// int[,] array = new int[3, 3];
+int rows = new Random().Next(3, 10);
+int columns = new Random().Next(3, 10);
 
-// Console.WriteLine("Первоначальный массив:");
-// for(int i=0; i<array.GetLength(0); i++)
-// {
-// for(int j=0; j<array.GetLength(1); j++)
-// {
-// array[i, j] = new Random().Next(0, 10);
-// Console.Write(array[i, j] + "\t");
+int[,] array = new int[rows, columns];
 
-// }
-// Console.WriteLine();
-// }
+Console.WriteLine("Первоначальный массив:");
+for (int i = 0; i < array.GetLength(0); i++)
+{
+    for (int j = 0; j < array.GetLength(1); j++)
+    {
+        array[i, j] = new Random().Next(0, 10);
+        Console.Write(array[i, j] + "\t");
 
+    }
+    Console.WriteLine();
+}
+
+Console.WriteLine();
+Console.WriteLine("Упорядоченный массив:");
+
+
+for (int i = 0; i < array.GetLength(0); i++)
+{
+    for (int j = 0; j < array.GetLength(1); j++)
+    {
+        for (int k = 0; k < array.GetLength(1)-1; k++)
+        {
+            if (array[1,k]<array[1,k+1])
+            {
+                int temp = array[i,k];
+                array[i,k]= array[1,k+1];
+                array[1,k+1]=temp;
+
+            }
+        }
+        Console.Write(array[i, j] + "\t");
+
+    }
+    Console.WriteLine();
+
+}
 
 //Задача 56: Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку с наименьшей суммой элементов.
 
@@ -123,7 +149,7 @@
 
 
 
- 
+
 //Задача 60. ...Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
 
 
